@@ -1,2 +1,2 @@
-# blog
-blog by vuepress
+# 博客
+记录前端学习点滴
