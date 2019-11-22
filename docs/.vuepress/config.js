@@ -28,38 +28,75 @@ module.exports = {
         lastUpdated: '上次更新',
         nav: [
             {
-                text: 'JavaScript',
-                link: '/javascript/prepare/'
+                text: 'HTML&CSS',
+                link: '/html-css/html/'
             },
-            {
-                text: 'HTML',
-                link: '/html/prepare/'
-            },
-            {
-                text: 'CSS',
-                link: '/css/prepare/'
-            },
+            // {
+            //     text: 'JavaScript',
+            //     link: '/javascript/prepare/'
+            // },
+            // {
+            //     text: 'CSS',
+            //     link: '/css/prepare/'
+            // },
         ],
         sidebar: {
-            // '/html/': [
-            //     {
-            //         title: '准备工作',
-            //         collapsable: false,
-            //         children: [
-            //             ['prepare/', 'Introduction'],
-            //             'prepare/flow',
-            //             'prepare/directory',
-            //             'prepare/build',
-            //             'prepare/entrance'
-            //         ]
-            //     },
-            // ],
+            '/html-css/': [
+                {
+                    title: 'HTML',
+                    collapsable: false,
+                    children: [
+                        ['html/','HTML基本结构'],
+                        'html/common-labels',
+                        'html/semantic',
+                        'html/html5',
+                        'html/jade'
+                    ]
+                },
+                {
+                    title: 'CSS2.1',
+                    collapsable: false,
+                    children: [
+                        ['css/', '什么是CSS'],
+                        'css/selectors',
+                        'css/three-characteristics',
+                        'css/stratification-priority',
+                        'css/normal-flow',
+                        'css/box-model-block',
+                        'css/margin-collapse',
+                        'css/box-model-inline'
+                    ]
+                },
+                {
+                    title: 'CSS3',
+                    collapsable: false,
+                    children: [
+                        ['css3/', 'CSS新世界'],
+                        'css3/selectors',
+                        'css3/text',
+                        'css3/box',
+                        'css3/gradient-function',
+                        'css3/transform',
+                        'css3/transition',
+                        'css3/transition-3d',
+                        'css3/animation',
+                        'css3/media',
+                        'css3/import',
+                        'css3/shapes',
+                        'css3/flex',
+                        'css3/grid',
+                        'css3/columns',
+                        'css3/less'
+                    ]
+                }
+            ],
+
             // '/javascript/': [
             //     {
             //         title: '准备工作',
             //         collapsable: false,
             //         children: [
-                        
+
             //         ]
             //     },
             // ],
