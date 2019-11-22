@@ -1,6 +1,6 @@
-# 一.选择器
+# CSS3选择器
 
-## 1.1属性选择器
+## 1.属性选择器
 
 - `[attr]`
 
@@ -34,14 +34,12 @@
 
   在⽅括号的结束的时候添加⼀个字⺟ i 或者 I ，则匹配属性值的时候会忽略⼤⼩写
 
+## 2.状态伪类选择器
 
-
-## 1.2状态伪类选择器
-
-- `:active`	户按下⿏标，但是没有松开的时候的状态 主要⽤a和button标签.
+- `:active` 户按下⿏标，但是没有松开的时候的状态 主要⽤a和button标签.
 - `:hover`         ⿏标移动到元素上⽅的时候的状态
 - `:focus`         获取焦点的时候状态。 ⼀般⽤在 input、textarea 上
-- `:enable`       
+- `:enable`
 - `:display`
 - `:read-only`     只读
 - `:read-writer`    读写
@@ -58,23 +56,21 @@ btn.onclick = function () {
 
 ```html
 </style>
-	:target{
-		color: #00B51D;
-	}
+    :target{
+        color: #00B51D;
+    }
 </style>
 
 <body>
     <!--name作为描点-->
-	<a href="#qwe">111</a>
-	<p><a name="qwe">121212</a></p>
+    <a href="#qwe">111</a>
+    <p><a name="qwe">121212</a></p>
     <!--id作为描点-->
     <!--<a href="#qwe">111</a>
 	<div></div>
 	<p id="qwe">121212</p>-->
 </body>
 ```
-
-
 
 ## 1.3结构伪类选择器
 
@@ -85,8 +81,6 @@ btn.onclick = function () {
 - `:nth-last-child(n)`
 - `:nth-of-type(n)`  第 n 个⼦元素( 某类元素)
 - `:nth-last-of-type(n)`
-
-
 
 ## 1.4伪元素选择器
 

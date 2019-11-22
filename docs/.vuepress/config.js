@@ -35,10 +35,6 @@ module.exports = {
             //     text: 'JavaScript',
             //     link: '/javascript/prepare/'
             // },
-            // {
-            //     text: 'CSS',
-            //     link: '/css/prepare/'
-            // },
         ],
         sidebar: {
             '/html-css/': [
@@ -90,16 +86,6 @@ module.exports = {
                     ]
                 }
             ],
-
-            // '/javascript/': [
-            //     {
-            //         title: '准备工作',
-            //         collapsable: false,
-            //         children: [
-
-            //         ]
-            //     },
-            // ],
         }
     },
 

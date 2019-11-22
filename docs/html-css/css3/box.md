@@ -1,6 +1,6 @@
-# 三.`CSS3`盒相关样式
+# `CSS3`盒相关样式
 
-## 3.1`box-sizing`盒模型
+## 1`box-sizing`盒模型
 
 - content-box
 - border-box
@@ -9,9 +9,7 @@
 
 `box-sizing:border-box`   IE盒模型
 
-
-
-## 3.2盒子阴影
+## 2.盒子阴影
 
 ```css
 box-shadow:inset 0px 0px 40px 2px gray;
@@ -27,7 +25,7 @@ box-shadow:inset 0px 0px 40px 2px gray;
 
 
 
-## 3.3圆角`border-radius`
+## 3.圆角`border-radius`
 
 ```css
 div{
@@ -42,7 +40,7 @@ div{
 
 
 
-## 3.4边框图片
+## 4.边框图片
 
 `border-image`
 
@@ -66,9 +64,7 @@ div{
 
 - `border-image-repeat` 图像边框是否应平铺( `repeat` )、铺满( `round`)或拉伸( `stretch` )、默认`space`。
 
-**注意:要想` border-image` 能够⽣效, 则 `border-width` 不能为 0 和 `border-style` 的值不能是`none`**
-
-
+**注意:要想`border-image` 能够⽣效, 则 `border-width` 不能为 0 和 `border-style` 的值不能是`none`**
 
 简写
 
@@ -86,19 +82,15 @@ border-image: url("/images/border.png") 27 23 / 50px 30px / 1rem round space;
 书写的时候要注意他们的顺序. 由于`outset`和`width`的相似性, 所以`outset`必须在`width`之后.
 `slice, width, outset` 之间要使⽤ / 来隔开
 
+## 5.背景相关属性
 
-
-
-
-## 3.5背景相关属性
-
-`background-size`	图片不会失真
+`background-size`   图片不会失真
 
 ```css
 div{
-    background-size: contain;	/*完整显示图片,图片优先*/
-    background-size: cover;		/*填满父容器,多余图片被裁剪*/
-  	background-size: 100px 100px;	/*缩放成指定大小*/
+    background-size: contain;   /*完整显示图片,图片优先*/
+    background-size: cover;    /*填满父容器,多余图片被裁剪*/
+    background-size: 100px 100px;   /*缩放成指定大小*/
 }
 ```
 
@@ -107,8 +99,6 @@ div{
 - `padding-box` 背景图像相对于内边距框来定位。
 - `border-box` 背景图像相对于边框盒来定位。默认值
 - `content-box` 背景图像相对于内容框来定位.
-
-
 
 `background-clip`
 
@@ -131,33 +121,27 @@ div{
 
 `background-attachment:fixed;`固定背景不动
 
-
-
-## 3.6`box-decoration-break`
+## 6.`box-decoration-break`
 
 CSS `box-decoration-break`属性可以指定元素片段在跨行、跨列或跨页（如打印）时候的样式渲染表现。
 
 默认情况下，元素的跨行或跨列渲染都是裁剪分割，各得一部分。
 
 修改前效果:
-
-![åè§é¦å°¾åä¸ä¸ª](https://image.zhangxinxu.com/image/blog/201901/2019-01-05_121202.png)
+<img :src="$withBase('/assets/before.png')">
 
 修改后效果:
-
-![ä¸ä¸åèçå­å·¦å³é½æ¯åè§](https://image.zhangxinxu.com/image/blog/201901/2019-01-05_124435.png)
+<img :src="$withBase('/assets/after.png')">
 
 代码:
 
 ```css
 .box { width: 200px; color: #fff; }
-.text { 
+.text {
   border-radius: 30px; background-color: #cd0000;
   box-decoration-break: clone;/*添加的代码*/
 }
 ```
-
-
 
 语法:
 
@@ -167,14 +151,10 @@ box-decoration-break: clone;
 ```
 
 **slice**
-
 slice是切片，分割的意思。默认值。表示各个盒子断开的部分如同切割开一般。
 
 **clone**
-
 clone是克隆，独立的意思。表示断开的各个盒子样式独自渲染。
-
-
 
 只能影响部分CSS的渲染:
 
@@ -186,4 +166,3 @@ clone是克隆，独立的意思。表示断开的各个盒子样式独自渲染
 - clip-path
 - margin
 - padding
-

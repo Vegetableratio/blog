@@ -4,7 +4,7 @@
 div{
     /*动画名字(必须)*/
     animation-name: move;
-    
+
     /*动画周期(必须) 单位s ms*/
 	animation-duration: 3s;
     
