@@ -1,5 +1,4 @@
-# 二.`flex`布局
-
+# `flex`布局
 
 让父容器控制子元素
 
@@ -9,22 +8,20 @@
 
 **无论作用在flex容器上，还是作用在flex子项，都是控制的flex子项的呈现，只是前者控制的是整体，后者控制的是个体。**
 
-## 2.1父容器(`flex container`)上的属性
+## 父容器(`flex container`)上的属性
 
 ```css
-flex-direction	/*主轴方向*/
-flex-wrap		/*从轴方向*/
-flex-flow		/*以上属性缩写*/
-justify-content	/*水平方向子项的对齐和分布方式*/
-align-items		/*flex子项们相对于flex容器在垂直方向上的对齐方式，一起顶部对齐、底部对齐、拉伸对齐*/
-align-content	/**/
+flex-direction/*主轴方向*/
+flex-wrap/*从轴方向*/
+flex-flow/*以上属性缩写*/
+justify-content/*水平方向子项的对齐和分布方式*/
+align-items/*flex子项们相对于flex容器在垂直方向上的对齐方式，一起顶部对齐、底部对齐、拉伸对齐*/
+align-content/**/
 ```
 
 `display : flex/inline-flex`将元素渲染成为一个块级容器/行内伸缩容器,主轴默认水平向右
 
-
-
-`flex-direction  ` 设置**主轴**方向,
+`flex-direction` 设置**主轴**方向,
 
 - `row`默认水平向右
 - `row-reverse`水平向左
@@ -39,11 +36,9 @@ align-content	/**/
 
 **以上两项属性简写**:`flex-flow`
 
-
-
 `justify-content:`  让弹性容器去控制弹性项目在弹性容器中**沿着主轴方向**的排列
 
-​	CSS `text-align`有个属性值为`justify`，可实现两端对齐，所以，当我们想要控制flex元素的水平对齐方式的时候，记住`justify`这个单词，`justify-content`属性也就记住了。`justify-content`可以看成是`text-align`的远房亲戚，不过前者控制flex元素的水平对齐外加分布，后者控制内联元素的水平对齐。
+​CSS `text-align`有个属性值为`justify`，可实现两端对齐，所以，当我们想要控制flex元素的水平对齐方式的时候，记住`justify`这个单词，`justify-content`属性也就记住了。`justify-content`可以看成是`text-align`的远房亲戚，不过前者控制flex元素的水平对齐外加分布，后者控制内联元素的水平对齐。
 
 - `left`或`flex-start`  默认值,主轴起点方向对齐//逻辑CSS属性值，与文档流方向相关。默认表现为左对齐。
 - `flex-end`  主轴终点方向对齐//逻辑CSS属性值，与文档流方向相关。默认表现为右对齐。
@@ -51,8 +46,6 @@ align-content	/**/
 - `space-around`  空白围绕在元素两边
 - `space-between`  两端对齐
 - `space-evenly`  空白均匀围绕在元素两边
-
-
 
 `align-items:`  flex子项们相对于flex容器在垂直方向上的对齐方式
 
@@ -62,8 +55,6 @@ align-content	/**/
 - `flex-end`  侧轴方向终点对齐//逻辑CSS属性值，与文档流方向相关。默认表现为容器底部对齐。
 - `center`  表现为垂直居中对齐。
 - `baseline`  文本的基线对齐//所有flex子项都相对于flex容器的基线对齐
-
-
 
 `align-content:`  设置`items`**侧轴方向**有多个元素的情况,如果侧轴方向只有一个则无效
 
@@ -76,20 +67,16 @@ align-content	/**/
 - `space-between` 表现为上下两行两端对齐。剩下每一行元素等分剩余空间。
 - `space-evenly` 每一行元素都完全上下等分。
 
-
-
-## 2.2用于`item`的属性
+## 用于`item`的属性
 
 ```css
-order		/*改变某一个flex子项的排序位置*/
-flex-grow	/*扩展所侵占的空间就是除去元素外的剩余的空白间隙。*/
-flex-shrink	/*空间不足时候如何收缩腾出空间*/
-flex-basis	/*在分配剩余空间之前元素的默认大小*/
-flex		/*以上三个属性简写*/
-align-self	/**/
+order/*改变某一个flex子项的排序位置*/
+flex-grow/*扩展所侵占的空间就是除去元素外的剩余的空白间隙。*/
+flex-shrink/*空间不足时候如何收缩腾出空间*/
+flex-basis/*在分配剩余空间之前元素的默认大小*/
+flex/*以上三个属性简写*/
+align-self/**/
 ```
-
-
 
 `order:<integer>`  整数值，默认值是 0。更改`items`的显示顺序值越大越靠后
 
@@ -116,43 +103,41 @@ align-self	/**/
 
 `align-self:` 语法同`align-items`
 
-
-
-## 2.3总结
+## 总结
 
 - 在Flex布局中，flex子元素的设置`float`，`clear`以及`vertical-align`属性都是没有用的。
 - Flexbox布局最适合应用程序的组件和小规模布局（一维布局），而Grid布局则适用于更大规模的布局（二维布局）
 
-## 2.4居中方式
+## 元素居中方式
 
 1.元素在父容器中居中
 
-- `Normal flow `中` margin:0 auto`
+- `Normal flow`中`margin:0 auto`
 
 - ```css
   div{
-      left: 0 ; 
-      right: 0 ; 
-      top: 0 ; 
-      bottom: 0; 
+      left: 0 ;
+      right: 0 ;
+      top: 0 ;
+      bottom: 0;
       margin: auto
   }
   ```
 
 - ```css
   div{
-      left:50%; 
-      top:50%; 
-      transform:translate(-50%,-50%)
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
   }
   ```
 
 - ```css
   div{
-      display:flex;
-  	justify-content:center;
-  	align-items:center;
-  }
+        isplay:flex;
+        justify-content:center;
+        align-items:center;
+    }
   ```
 
 - 父容器`display:flex`; 子容器:`margin:auto;`
@@ -168,11 +153,8 @@ align-self	/**/
 
 - ```css
   div{
-      display:flex;
-  	justify-content:center;
-  	align-items:center;
-  }
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
   ```
-
-
-

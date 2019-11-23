@@ -1,6 +1,6 @@
 # `CSS3`盒相关样式
 
-## 1`box-sizing`盒模型
+## 1.`box-sizing`盒模型
 
 - content-box
 - border-box
@@ -23,8 +23,6 @@ box-shadow:inset 0px 0px 40px 2px gray;
 - 第六个值：阴影的颜色。
   注意： `box-shadow` 也可以像 `text-shadow` 一样，使用逗号分隔同时设置多个阴影。
 
-
-
 ## 3.圆角`border-radius`
 
 ```css
@@ -36,9 +34,7 @@ div{
 }
 ```
 
-在线工具:http://westciv.com/tools/gradients/
-
-
+在线工具:<http://westciv.com/tools/gradients/>
 
 ## 4.边框图片
 
@@ -51,7 +47,6 @@ div{
   表示的在把边框图⽚进⾏分割为9宫格时候的偏移量。
 
   属性值不带单位
-
 
 - `border-image-width` 图⽚边框的宽度。
 

@@ -1,6 +1,6 @@
-# 五.`2D`变换`transform`
+# `2D`变换`transform`
 
-CSS属性:`transform`	
+CSS属性:`transform`
 
 ```css
 transform: matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0); /**/
@@ -30,7 +30,7 @@ transform: perspective(17px);
 
 移动位置相对于没变换前的位置
 
-- 平移`translate(X,Y)`	
+- 平移`translate(X,Y)`
   - `translateX()`
   - `tanslateY()`
 - 旋转`rotate(45deg)`
@@ -43,10 +43,6 @@ transform: perspective(17px);
   - `skewX()`   以Y轴偏向X轴方向扭曲
   - `skewY()`   以X轴偏向Y轴方向扭曲
 
-
-
 **任何变换的默认变换原点:元素的几何中心**
-
 `transform-origin`  指定元素的变化原点,具体的值或百分比(参照自己的值)
-
-	默认值:50% (几何中心)
+默认值:50% (几何中心)

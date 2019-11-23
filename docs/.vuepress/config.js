@@ -31,10 +31,10 @@ module.exports = {
                 text: 'HTML&CSS',
                 link: '/html-css/html/'
             },
-            // {
-            //     text: 'JavaScript',
-            //     link: '/javascript/prepare/'
-            // },
+            {
+                text: 'JavaScript',
+                link: '/javascript/'
+            },
         ],
         sidebar: {
             '/html-css/': [
@@ -86,6 +86,22 @@ module.exports = {
                     ]
                 }
             ],
+            '/javascript/':[
+                {
+                    title:'JavaScript',
+                    collapsable: false,
+                    children: [
+                        ['','引入JS文件的方式'],
+                        'usefuleApi',
+                        'identifier',
+                        'variable',
+                        'data-element',
+                        'data-change',
+                        'operator',
+                        'process-control',
+                    ]
+                }
+            ]
         }
     },
 

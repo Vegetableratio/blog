@@ -1,8 +1,8 @@
-# 十一. 背景
+# 背景
 
 任何元素都可以有背景
 
-1. `background-color` 
+1. `background-color`
 
 2. `background-img`
 
@@ -25,43 +25,6 @@
    background : 背景色 图片的url 是否重复 位置;
    ```
 
-
-
----
-
-# 十二. 颜色值
-
-三原色:  `red, green, blue`
-
-1. 十六进制法
-
-    ```css
-    color:#ffffff;
-    ```
-2. `rgb`:十进制的值
-
-   ```
-   color : rgb(100, 200, 200);
-   ```
-3. `rgba`十进制带透明度的颜色 (alpha通道)
-
-   ```
-   color : rgba(100, 200, 200, 0.3);
-   
-   a:alpha 透明度
-   0-1 0表示完全透明, 1表示完全不透明
-   ```
-
-4. 英文单词
-
-   ```css
-   red, blue, green, yellow...
-   ```
-
----
-
-# 十三.背景
-
 ```css
 background-image: url("a.jpg");/*背景图片*/
 background-color: pink;/*背景颜色*/
@@ -72,3 +35,34 @@ backgroung-attachment:fixed;/*背景图片永远参考视窗*/
 ```
 
 雪碧图:用于加载几张小图合成的大图,加快访问速度
+
+## 颜色值
+
+三原色:`red, green, blue`
+
+1. 十六进制法
+
+```css
+color:#ffffff;
+```
+
+2.`rgb`:十进制的值
+
+```css
+color : rgb(100, 200, 200);
+```
+
+3.`rgba`十进制带透明度的颜色 (alpha通道)
+
+```css
+color : rgba(100, 200, 200, 0.3);
+
+a:alpha 透明度
+0-1 0表示完全透明, 1表示完全不透明
+```
+
+4.英文单词
+
+   ```css
+   red, blue, green, yellow...
+   ```

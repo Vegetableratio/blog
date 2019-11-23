@@ -1,8 +1,8 @@
-# 一.`CSS`
+# `CSS`
 
 `CSS`:`Cascading Style Sheets`,层叠样式表
 
-## 1.1引入`CSS`的方法(180717)
+## 引入`CSS`的方法
 
 - 行内样式(内联样式)
 
@@ -22,14 +22,14 @@
 
   本质来说, `style`标签可以添加网页中的任何的位置, 但是, 作为国际惯例, 都写在的`head`标签中.
 
-  ```html
-  <style type="text/css">
-  			p{
-  				color:red;
-  				font-size:40px;
-  			}
-  </style>
-  ```
+```html
+<style type="text/css">
+    p{
+        color:red;
+        font-size:40px;
+    }
+</style>
+```
 
 - 外部样式
 
@@ -39,14 +39,14 @@
   <link rel="stylesheet" type="text/css" href="css文件的地址">
    ```
 
-## 1.2语法格式
+## 语法格式
 
 ```css
-	/*选择器*/
-	p{
-		color:red;/*属性名:属性值;*/
-        /*css申明*/
-	}
+/*选择器*/
+p{
+    color:red;/*属性名:属性值;*/
+    /*css申明*/
+}
 /*多个css声明形成css声明块,用大括弧括起来*/
 /*选择器+声明块被称为规则集,简称规则*/
 ```

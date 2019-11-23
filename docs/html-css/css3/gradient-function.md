@@ -1,4 +1,4 @@
-# 四,渐变函数
+# 渐变函数
 
 渐变不是一种颜色, 而是一种图片, 没有固定大小的图片, 可以完全覆盖元素背景区域.
 `background:`
@@ -37,17 +37,15 @@ div {
 }
 ```
 
-
-
 倒影
 
 `-wekit-box-reflect:below 0 linear-gradient(,)`
 
 ```css
 img {
-	display: block;
-	width: 256px;
-	height: 363px;
-	-webkit-box-reflect: below 0 linear-gradient(transparent, white);
+    display: block;
+    width: 256px;
+    height: 363px;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, white);
 }
 ```

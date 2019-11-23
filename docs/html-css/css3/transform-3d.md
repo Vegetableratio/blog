@@ -1,6 +1,6 @@
-# 八.`3D`动画`transform`
+# `3D`变换`transform`
 
-## 8.1`perspective`景深
+## 1.`perspective`景深
 
 表示视距,越小越明显,越大越接近2d效果,给需要做变换的元素的父容器添加
 
@@ -9,28 +9,22 @@ perspective: 600px;
 perspective-origin:
 ```
 
-## 8.2`transform-style`开启3d空间
+## 2.`transform-style`开启3d空间
 
 只能给需要变换的父容器添加
 
 ```css
-transform-style:flat;	/*默认值 2d空间*/
-transform-style:preserve-3d;	/*开启3D空间*/
+transform-style:flat;/*默认值 2d空间*/
+transform-style:preserve-3d;/*开启3D空间*/
 ```
 
 `backface-visibility: hidden;`背面可见性
 
-## 8.3属性值
+## 3.属性值
 
-`translate3d(x,y,z)`或	`translateZ()`等
-
+`translate3d(x,y,z)`或`translateZ()`等
 `rotste3d(x,y,z,deg)`
-
 `scale3d(sx,sy,sz)`
-
-
-
-
 
 案例:💗型
 

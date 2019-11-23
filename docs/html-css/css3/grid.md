@@ -1,6 +1,8 @@
-# 三.`Grid`布局
+# `Grid`布局
 
-​	给`<div>`这类块状元素元素设置`display:grid`或者给`<span>`这类内联元素设置`display:inline-grid`，Grid布局即创建
+本文转载自:<https://www.zhangxinxu.com/wordpress/?p=814
+
+​给`<div>`这类块状元素元素设置`display:grid`或者给`<span>`这类内联元素设置`display:inline-grid`，Grid布局即创建
 
 ```css
 div {
@@ -9,31 +11,29 @@ div {
 /*此时该div就是“grid容器”，其子元素称为“grid子项”。*/
 ```
 
-
-
-## 3.1作用在`grid`容器上的CSS属性
+## 1.作用在`grid`容器上的CSS属性
 
 ```css
-grid-template-columns	/*X方向分配的宽度间隔*/
-grid-template-rows		/*Y方向分配的宽度间隔*/
-grid-template-areas		/**/
-grid-template			/**/
-grid-column-gap			/**/
-grid-row-gap			/**/
-grid-gap				/**/
-justify-items			/**/
-align-items				/**/
-place-items				/**/
-justify-content			/**/
-align-content			/**/
-place-content			/**/
-grid-auto-columns		/**/
-grid-auto-rows			/**/
-grid-auto-flow			/**/
-grid					/**/
+grid-template-columns   /*X方向分配的宽度间隔*/
+grid-template-rows      /*Y方向分配的宽度间隔*/
+grid-template-areas
+grid-template
+grid-column-gap
+grid-row-gap
+grid-gap
+justify-items
+align-items
+place-items
+justify-content
+align-content
+place-content
+grid-auto-columns
+grid-auto-rows
+grid-auto-flow
+grid
 ```
 
-### 3.1.1`columns`&`rows`
+### 1.1`columns`&`rows`
 
 例子:
 
@@ -47,10 +47,6 @@ grid-template-columns后面3个值，表示分为了3列，从左往右每列的
 grid-template-rows属性值含4个值，表示分为了4行，从上往下每行的高度分别是25%，100px，auto（自动）和60px。
 */
 ```
-
-效果:
-
-![åºæ¬å°ºå¯¸ååç¤ºæå¾](https://image.zhangxinxu.com/image/blog/201811/2018-11-04_210143.png)
 
 ```css
 /*
@@ -105,24 +101,24 @@ grid-template-rows属性值含4个值，表示分为了4行，从上往下每行
 }
 ```
 
-### 3.1.2`areas`
+### 1.2`areas`
 
 语法:
 
 ```css
 .container {
-  grid-template-areas: 
+  grid-template-areas:
     "<grid-area-name> | . | none | ..."
     "...";
 }
 /*
 其中：
 grid-area-name
-	对应网格区域的名称。
+    对应网格区域的名称。
 .
-	表示空的网格单元格。
+    表示空的网格单元格。
 none
-	没有定义网格区域。
+    没有定义网格区域。
 */
 ```
 
@@ -167,7 +163,7 @@ none
 
 以及，我们的网格区域一定要形成规整的矩形区域，什么L形，凹的或凸的形状都是不支持的，会认为是无效的属性值。
 
-### 3.1.3属性缩写
+### 1.3属性缩写
 
 `grid-template`是`grid-template-rows`，`grid-template-columns`和`grid-template-areas`属性的缩写。
 
@@ -202,9 +198,7 @@ none
 }
 ```
 
-
-
-### 3.1.4网格间隙
+### 1.4网格间隙
 
 `grid-column-gap`和`grid-row-gap`
 
@@ -234,8 +228,6 @@ none
 }
 ```
 
-
-
 **属性缩写:**
 
 ```css
@@ -258,9 +250,7 @@ none
 }
 ```
 
-
-
-### 3.1.5 `justify-items`
+### 1.5 `justify-items`
 
 指定了网格元素的水平呈现方式，是水平拉伸显示，还是左中右对齐，语法如下：
 
@@ -270,13 +260,13 @@ none
 }
 /*
 stretch
-	默认值，拉伸。表现为水平填充。
+    默认值，拉伸。表现为水平填充。
 start
-	表现为网格水平尺寸收缩为内容大小，同时沿着网格线左侧对齐显示（假设文档流方向没有变）。
+    表现为网格水平尺寸收缩为内容大小，同时沿着网格线左侧对齐显示（假设文档流方向没有变）。
 end
-	表现为网格水平尺寸收缩为内容大小，同时沿着网格线右侧对齐显示（假设文档流方向没有变）。
+    表现为网格水平尺寸收缩为内容大小，同时沿着网格线右侧对齐显示（假设文档流方向没有变）。
 center
-	表现为网格水平尺寸收缩为内容大小，同时在当前网格区域内部水平居中对齐显示（假设文档流方向没有变）。
+    表现为网格水平尺寸收缩为内容大小，同时在当前网格区域内部水平居中对齐显示（假设文档流方向没有变）。
 */
 ```
 
@@ -293,19 +283,17 @@ center
 /*
 其中（假设文档流方向为网页默认）：
 stretch
-	默认值，拉伸。表现为垂直填充。
+    默认值，拉伸。表现为垂直填充。
 start
-	表现为网格垂直尺寸收缩为内容大小，同时沿着上网格线对齐显示。
+    表现为网格垂直尺寸收缩为内容大小，同时沿着上网格线对齐显示。
 end
-	表现为网格垂直尺寸收缩为内容大小，同时沿着下网格线对齐显示。
+    表现为网格垂直尺寸收缩为内容大小，同时沿着下网格线对齐显示。
 center
-	表现为网格垂直尺寸收缩为内容大小，同时在当前网格区域内部垂直居中对齐显示。
+    表现为网格垂直尺寸收缩为内容大小，同时在当前网格区域内部垂直居中对齐显示。
 */
 ```
 
-
-
-### 3.1.7`place-items`
+### 1.7`place-items`
 
 `place-items`可以让`align-items`和`justify-items`属性写在单个声明中。语法如下：
 
@@ -319,9 +307,7 @@ center
 */
 ```
 
-
-
-### 3.1.8`justify-content`
+### 1.8`justify-content`
 
 此属性指定了网格元素的水平分布方式。此属性仅在网格总宽度小于grid容器宽度时候有效果。例如，我们网格设定的都是固定的宽度值，结果还有剩余空间。
 
@@ -355,9 +341,7 @@ space-evenly:evenly是匀称、平等的意思。也就是视觉上，每个flex
 */
 ```
 
-
-
-### 3.1.9`align-content`
+### 1.9`align-content`
 
 `align-content`可以看成和`justify-content`是相似且对立的属性，`justify-content`指明水平方向grid子项的分布方式，而`align-content`则是指明垂直方向每一行grid元素的分布方式。如果所有grid子项只有一行，则`align-content`属性是没有任何效果的。
 
@@ -383,8 +367,6 @@ space-evenly:每一行元素都完全上下等分。
 */
 ```
 
-
-
 以上`justify-content`和`align-content`中的grid布局相关CSS都是:
 
 ```css
@@ -395,7 +377,7 @@ space-evenly:每一行元素都完全上下等分。
 
 
 
-### 3.1.9`place-content`
+### 1.9`place-content`
 
 `place-content`可以让`align-content`和`justify-content`属性写在一个CSS声明中，也就是俗称的缩写。语法如下：
 
@@ -406,13 +388,9 @@ space-evenly:每一行元素都完全上下等分。
 /*这里顺序是align-content在前，justify-content在后。*/
 ```
 
+### 1.10`grid-auto-columns`和`grid-auto-rows`
 
-
-### 3.1.10`grid-auto-columns`和`grid-auto-rows`
-
-​	指定任何自动生成的网格轨道（也称为隐式网格轨道）的大小。 当网格项目多于网格中的单元格或网格项目放置在显式网格之外时，将创建隐式轨道。
-
-
+​指定任何自动生成的网格轨道（也称为隐式网格轨道）的大小。 当网格项目多于网格中的单元格或网格项目放置在显式网格之外时，将创建隐式轨道。
 
 语法:
 
@@ -436,11 +414,11 @@ space-evenly:每一行元素都完全上下等分。
     grid-template-rows: 30px 90px;
     grid-auto-columns: 60px;
 }
-.item-a { 
+.item-a {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
 }
-.item-b { 
+.item-b {
     /* 容器水平只有2个格子，但这里设定的是第3个，隐式网格创建 */
     grid-column: 3 / 4;
     grid-row: 2 / 3; 
@@ -450,7 +428,7 @@ space-evenly:每一行元素都完全上下等分。
 
 ### 3.1.11`grid-auto-flow`
 
-​	`grid-auto-flow`属性控制没有明确指定位置的grid子项的放置方式。比方说定义了一个5*2的10格子，共有5个元素，其中2个元素指定了放在哪个格子里，还有3个则自生自灭排列。此时，这3个元素如何排列就是由`grid-auto-flow`属性控制的。
+​`grid-auto-flow`属性控制没有明确指定位置的grid子项的放置方式。比方说定义了一个5*2的10格子，共有5个元素，其中2个元素指定了放在哪个格子里，还有3个则自生自灭排列。此时，这3个元素如何排列就是由`grid-auto-flow`属性控制的。
 
 语法:
 
@@ -463,20 +441,18 @@ dense:这个英文是稠密的意思。如果有设置，则表示自动排列�
 */
 ```
 
+### 1.12`grid`属性缩写
 
-
-## 3.1.12`grid`属性缩写
-
-​	grid是下面所有这些CSS属性的缩写集合，`grid-template-rows`，`grid-template-columns`，`grid-template-areas`，`grid-auto-rows`，`grid-auto-columns`和`grid-auto-flow`
+​grid是下面所有这些CSS属性的缩写集合，`grid-template-rows`，`grid-template-columns`，`grid-template-areas`，`grid-auto-rows`，`grid-auto-columns`和`grid-auto-flow`
 
 语法:
 
 ```css
-grid: none	/*none表示设置所有的子属性为初始值。*/
+grid: none/*none表示设置所有的子属性为初始值。*/
 ```
 
 ```css
-grid: <grid-template>	/*和grid-template用法一致。*/
+grid: <grid-template>/*和grid-template用法一致。*/
 
 /*例如：*/
 .container {
@@ -494,15 +470,7 @@ grid: <grid-template-rows> / [ auto-flow && dense? ] <grid-auto-columns>?
 /*问号?表示0或1，可有可无的意思。也就是dense关键字和grid-auto-columns值都可以省略。*/
 ```
 
-
-
-
-
-
-
-## 3.2作用在`item`上的CSS属性
-
-
+## 2.作用在`item`上的CSS属性
 
 ```css
 grid-column-start

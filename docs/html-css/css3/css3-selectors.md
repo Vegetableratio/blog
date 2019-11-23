@@ -72,7 +72,7 @@ btn.onclick = function () {
 </body>
 ```
 
-## 1.3结构伪类选择器
+## 3.结构伪类选择器
 
 - `:root`   根元素
 - `:not(x)`   否定伪类。最终的结果不满⾜ x 的被选中
@@ -82,7 +82,7 @@ btn.onclick = function () {
 - `:nth-of-type(n)`  第 n 个⼦元素( 某类元素)
 - `:nth-last-of-type(n)`
 
-## 1.4伪元素选择器
+## 4.伪元素选择器
 
 - `::first-letter`    选中首字符
 - `::first-line`     选中第一行

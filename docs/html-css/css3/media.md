@@ -1,4 +1,4 @@
-# 九.响应式布局
+# 响应式布局
 
 三大要素:
 
@@ -7,8 +7,6 @@
 媒体查询:`@media`
 
 丰富媒体查询`screen`  `print`  `all`
-
-
 
 ```css
 @media screen{
