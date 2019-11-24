@@ -1,7 +1,7 @@
 module.exports = {
     dest: 'dist',// dest 指定 vuepress build 的输出目录 默认值: .vuepress/dist
-    title: '前端之路',//网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
-    description: '前端学习笔记',//网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中。
+    title: '从零开始的前端学习',//网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
+    description: '码农笔记',//网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中。
     base: '/',//部署站点的基础路径
     // head 额外的需要被注入到当前页面的 HTML<head> 中的标签
     head: [
@@ -33,14 +33,14 @@ module.exports = {
             },
             {
                 text: 'JavaScript',
-                link: '/javascript/'
+                link: '/javascript/ecma/'
             },
         ],
         sidebar: {
             '/html-css/': [
                 {
                     title: 'HTML',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         ['html/','HTML基本结构'],
                         'html/common-labels',
@@ -51,7 +51,7 @@ module.exports = {
                 },
                 {
                     title: 'CSS2.1',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         ['css/', '什么是CSS'],
                         'css/selectors',
@@ -65,7 +65,7 @@ module.exports = {
                 },
                 {
                     title: 'CSS3',
-                    collapsable: false,
+                    collapsable: true,
                     children: [
                         ['css3/', 'CSS新世界'],
                         'css3/css3-selectors',
@@ -88,23 +88,53 @@ module.exports = {
             ],
             '/javascript/':[
                 {
-                    title:'JavaScript',
-                    collapsable: false,
+                    title:'ECMA',
+                    collapsable: true,
                     children: [
-                        ['','引入JS文件的方式'],
-                        'usefuleApi',
-                        'identifier',
-                        'variable',
-                        'data-element',
-                        'data-change',
-                        'operator',
-                        'process-control',
+                        ['ecma/','引入JS文件的方式'],
+                        'ecma/usefuleApi',
+                        'ecma/identifier',
+                        'ecma/variable',
+                        'ecma/data-element',
+                        'ecma/data-change',
+                        'ecma/operator',
+                        'ecma/process-control',
+                        'ecma/function',
+                        'ecma/object-oriented',
+                        'ecma/object',
+                        'ecma/constructor',
+                        'ecma/test-object',
+                        'ecma/object-model',
+                        'ecma/passing-of-parameters',
+                        'ecma/prototype',
+                        'ecma/array',
+                        'ecma/array-api',
+                        'ecma/math',
+                        'ecma/string',
+                        'ecma/date',
+                        'ecma/regexp',
                     ]
+                },
+                {
+                    title: 'DOM',
+                    collapsable: true,
+                    children: [
+                        ['dom/', 'JavaScript的组成'],
+                        'dom/settimeout',
+                        'dom/events',
+                    ] 
+                },
+                {
+                    title: 'BOM',
+                    collapsable: true,
+                    children: [
+                        ['bom/', '浏览器对象模型(BOM)'],
+                        'bom/bom-events',
+                    ] 
                 }
             ]
         }
     },
-
     // 浏览器兼容性
     evergreen: true, //设置成 true，这将会禁止ESNext到ES5的转译以及对IE的polyfills，同时会带来更快的构建速度和更小的文件体积。
 }
