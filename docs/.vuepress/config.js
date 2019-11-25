@@ -35,6 +35,10 @@ module.exports = {
                 text: 'JavaScript',
                 link: '/javascript/ecma/'
             },
+            // {
+            //     text: 'Vue相关',
+            //     link: '/vue-learn/analysis/array.md'
+            // },
         ],
         sidebar: {
             '/html-css/': [
@@ -132,7 +136,34 @@ module.exports = {
                         'bom/bom-events',
                     ] 
                 }
-            ]
+            ],
+            // '/vue-learn/':[
+            //     {
+            //         title: 'Vue源码学习',
+            //         collapsable: true,
+            //         children: [
+            //             // ['analysis/', '关于此部分'],
+            //             'analysis/array'
+                        
+            //         ]
+            //     },
+            //     {
+            //         title: 'Vue周边栈',
+            //         collapsable: true,
+            //         children: [
+            //             // ['', 'Vue相关'],
+
+            //         ]
+            //     },
+            //     {
+            //         title: '工作中遇到的问题',
+            //         collapsable: true,
+            //         children: [
+            //             // ['', 'Vue相关'],
+
+            //         ]
+            //     }
+            // ]
         }
     },
     // 浏览器兼容性
