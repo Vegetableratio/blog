@@ -39,6 +39,14 @@ module.exports = {
             //     text: 'Vue相关',
             //     link: '/vue-learn/analysis/array.md'
             // },
+            // {
+            //     text: 'Linux',
+            //     link: '/linux/'
+            // },
+            // {
+            //     text: 'Work',
+            //     link: '/work/'
+            // },
         ],
         sidebar: {
             '/html-css/': [
@@ -46,7 +54,7 @@ module.exports = {
                     title: 'HTML',
                     collapsable: true,
                     children: [
-                        ['html/','HTML基本结构'],
+                        ['html/', 'HTML基本结构'],
                         'html/common-labels',
                         'html/semantic',
                         'html/html5',
@@ -90,12 +98,12 @@ module.exports = {
                     ]
                 }
             ],
-            '/javascript/':[
+            '/javascript/': [
                 {
-                    title:'ECMA',
+                    title: 'ECMAScript',
                     collapsable: true,
                     children: [
-                        ['ecma/','引入JS文件的方式'],
+                        ['ecma/', '引入JS文件的方式'],
                         'ecma/usefuleApi',
                         'ecma/identifier',
                         'ecma/variable',
@@ -126,7 +134,7 @@ module.exports = {
                         ['dom/', 'JavaScript的组成'],
                         'dom/settimeout',
                         'dom/events',
-                    ] 
+                    ]
                 },
                 {
                     title: 'BOM',
@@ -134,7 +142,15 @@ module.exports = {
                     children: [
                         ['bom/', '浏览器对象模型(BOM)'],
                         'bom/bom-events',
-                    ] 
+                    ]
+                },
+                {
+                    title: 'Ajax',
+                    collapsable: true,
+                    children: [
+                        ['ajax/', '介绍'],
+                        'ajax/xmlhttprequest'
+                    ]
                 }
             ],
             // '/vue-learn/':[
@@ -144,7 +160,6 @@ module.exports = {
             //         children: [
             //             // ['analysis/', '关于此部分'],
             //             'analysis/array'
-                        
             //         ]
             //     },
             //     {
@@ -152,7 +167,6 @@ module.exports = {
             //         collapsable: true,
             //         children: [
             //             // ['', 'Vue相关'],
-
             //         ]
             //     },
             //     {
@@ -160,10 +174,28 @@ module.exports = {
             //         collapsable: true,
             //         children: [
             //             // ['', 'Vue相关'],
-
             //         ]
             //     }
-            // ]
+            // ],
+            // '/linux/': [
+            //     {
+            //         title: 'Linux学习',
+            //         collapsable: true,
+            //         children: [
+            //             ['', '常用指令'],
+            //             'vi'
+            //         ]
+            //     },
+            // ],
+            // '/work/': [
+            //     {
+            //         title: '工作实践',
+            //         collapsable: true,
+            //         children: [
+            //             ['', '静态网站部署'],
+            //         ]
+            //     },
+            // ],
         }
     },
     // 浏览器兼容性
