@@ -145,6 +145,14 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'ESNext',
+                    collapsable: true,
+                    children: [
+                        ['esnext/', 'ES5->ESNext'],
+                        'esnext/summary',
+                    ]
+                },
+                {
                     title: 'Ajax',
                     collapsable: true,
                     children: [
