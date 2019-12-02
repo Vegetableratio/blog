@@ -1,6 +1,6 @@
 module.exports = {
     dest: 'dist',// dest 指定 vuepress build 的输出目录 默认值: .vuepress/dist
-    title: '从零开始的前端学习',//网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
+    title: '怪蜀黍',//网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
     description: '码农笔记',//网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中。
     base: '/',//部署站点的基础路径
     // head 额外的需要被注入到当前页面的 HTML<head> 中的标签
