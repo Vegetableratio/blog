@@ -18,7 +18,7 @@ module.exports = {
     ],
     // host 指定用于 dev server 的主机名 Default: '0.0.0.0'
     // port 指定 dev server 的端口 默认值: 8080
-    serviceWorker: true,//如果设置成 true，VuePress 将会自动生成并且注册一个 service worker，它缓存了那些已访问过的页面的内容，用于离线访问（仅在生产环境生效）
+    serviceWorker: false,//如果设置成 true，VuePress 将会自动生成并且注册一个 service worker，它缓存了那些已访问过的页面的内容，用于离线访问（仅在生产环境生效）
     // 主题
     themeConfig: {
         repo: 'Vegetableratio/blog',
