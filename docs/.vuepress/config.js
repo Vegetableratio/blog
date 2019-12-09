@@ -1,7 +1,7 @@
 module.exports = {
     dest: 'dist',// dest 指定 vuepress build 的输出目录 默认值: .vuepress/dist
-    title: '怪蜀黍',//网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
-    description: '码农笔记',//网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中。
+    title: '怪蜀黍的码农之路',//网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
+    description: 'coding note',//网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中。
     base: '/',//部署站点的基础路径
     // head 额外的需要被注入到当前页面的 HTML<head> 中的标签
     head: [
@@ -29,14 +29,29 @@ module.exports = {
         nav: [
             {
                 text: 'HTML&CSS',
-                link: '/html-css/html/'
+                items: [
+                    { text: 'HTML', link: '/html-css/html/' },
+                    { text: 'CSS2.1', link: '/html-css/css/' },
+                    { text: 'CSS3', link: '/html-css/css3/' }
+                ]
             },
             {
                 text: 'JavaScript',
-                link: '/javascript/ecma/'
+                items: [
+                    { text: 'ECMAScript', link: '/javascript/ecma/' },
+                    { text: 'ESNext', link: '/javascript/esnext/' },
+                    { text: 'DOM', link: '/javascript/dom/' },
+                    { text: 'BOM', link: '/javascript/bom/' },
+                    { text: 'Ajax', link: '/javascript/ajax/' },
+                    { text: '其他', link: '/javascript/other/' },
+                ]
+            },
+            {
+                text: '移动端',
+                link: '/mobile/'
             },
             // {
-            //     text: 'Vue相关',
+            //     text: 'Vue',
             //     link: '/vue-learn/analysis/array.md'
             // },
             // {
@@ -65,7 +80,7 @@ module.exports = {
                     title: 'CSS2.1',
                     collapsable: true,
                     children: [
-                        ['css/', '什么是CSS'],
+                        ['css/', 'CSS'],
                         'css/selectors',
                         'css/three-characteristics',
                         'css/stratification-priority',
@@ -145,6 +160,14 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'Ajax',
+                    collapsable: true,
+                    children: [
+                        ['ajax/', '介绍'],
+                        'ajax/xmlhttprequest'
+                    ]
+                },
+                {
                     title: 'ESNext',
                     collapsable: true,
                     children: [
@@ -153,13 +176,22 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Ajax',
+                    title: '其他',
                     collapsable: true,
                     children: [
-                        ['ajax/', '介绍'],
-                        'ajax/xmlhttprequest'
+                        ['other/', '其他'],
+                        'other/module',
                     ]
                 }
+            ],
+            '/mobile/': [
+                {
+                    title: '移动端',
+                    collapsable: true,
+                    children: [
+                        ['', '相关概念'],
+                    ]
+                },
             ],
             // '/vue-learn/':[
             //     {
