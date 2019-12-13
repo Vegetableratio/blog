@@ -47,7 +47,7 @@
 
 15.`Generators`生成器函数
 
-16.模块
+16.[模块](../other/module.html)
 
 ## ES2016
 
