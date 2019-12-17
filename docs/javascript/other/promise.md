@@ -1,4 +1,4 @@
-# 一些整理
+# JS异步
 
 ## `Promise`
 
@@ -219,7 +219,7 @@ new Promise((resolve, reject) => {
     6. Promise.resolveDelay()/rejectDelay()的实现
     7. ES6 class版本
 
-### 4.async与await
+## async与await
 
     1. async 函数
         函数的返回值为promise对象
@@ -234,7 +234,7 @@ new Promise((resolve, reject) => {
         await必须写在async函数中, 但async函数中可以没有await
         如果await的promise失败了, 就会抛出异常, 需要通过try...catch来捕获处理
 
-### 5.JS异步之宏队列与微队列
+## JS异步之宏队列与微队列
 
 <img :src="$withBase('/assets/js/stack.png')" alt="宏队列与微队列">
 
@@ -244,3 +244,15 @@ new Promise((resolve, reject) => {
 
 - JS引擎首先必须先执行所有的初始化同步任务代码
 - 每次准备取出第一个宏任务执行前, 都要将所有的微任务一个一个取出来执行
+
+## 从一道面试题深入理解`async`&`await`
+
+异步执行顺序:
+1.分析有多少个宏任务;
+2.在每个宏任务中,分析有多少个微任务;
+3.根据调用次序,确定宏任务中的微任务的执行次序;
+4.根据宏任务的触发规则和调用次序,确定宏任务的执行次序;
+5.确定整个次序
+
+[题目](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
+[令人费解的async/await执行顺序](https://juejin.im/post/5c3cc981f265da616a47e028)

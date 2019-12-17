@@ -140,8 +140,8 @@ maximum-scale=
 默认情况下适配
 ```
 
-```shell
-rem适配方案
+```js
+//rem适配方案
 
 (function(){
     var style = document.createElement("style");
@@ -157,14 +157,15 @@ rem适配方案
     劣势:维护费劲
 ```
 
-```shell
+```js
+/*
 暴力方案(viewport适配)
 只兼容苹果/高版本安卓
 content="width = 750"
 
 动态调整initaial-scale
     小公司特别喜欢的方案,所量即所得
-
+*/
 var targetW = 750;
 var scale =document.documentElement.clientWidth/targetW;
 var metaNode = document.querySelector("meta[name=viewport]");

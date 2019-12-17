@@ -1,0 +1,15 @@
+# library
+
+"better-scroll": "^1.13.2"
+"driver.js": "^0.8.1"
+"echarts": "^4.5.0"
+"fastclick": "^1.0.6"
+"fullcalendar": "^3.9.0"
+"hammerjs": "^2.0.8"
+"html2canvas": "^1.0.0-alpha.12"
+"jquery": "^3.3.1"
+"mescroll.js": "^1.4.1"
+"moment": "^2.24.0"
+"qrcode": "^1.3.3"
+"scharts": "^0.0.8"
+"swiper": "^3.4.2"

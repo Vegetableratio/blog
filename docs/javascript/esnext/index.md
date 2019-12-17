@@ -26,7 +26,7 @@
 
 注意和`for-in`的区别
 
-9.`Promise`
+9.[Promise](../other/promise.html)
 
 10.`String`新方法
 

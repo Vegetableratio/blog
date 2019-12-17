@@ -47,6 +47,13 @@ module.exports = {
                 ]
             },
             // {
+            //     text: 'web周边栈',
+            //     items: [
+            //         { text: 'library', link: '/peripheral-stack/library.html' },
+            //         { text: 'Vue周边栈', link: '/peripheral-stack/vue.html' },
+            //     ]
+            // },
+            // {
             //     text: '移动端',
             //     link: '/mobile/'
             // },
@@ -180,7 +187,7 @@ module.exports = {
                     children: [
                         ['other/', '其他'],
                         'other/module',
-                        // 'other/promise',
+                        'other/promise',
                     ]
                 }
             ],
@@ -193,6 +200,16 @@ module.exports = {
                     ]
                 },
             ],
+            '/peripheral-stack/': [
+                {
+                    title: '周边栈',
+                    collapsable: true,
+                    children: [
+                        'library',
+                        'vue',
+                    ]
+                },
+            ]
             // '/vue-learn/':[
             //     {
             //         title: 'Vue源码学习',
@@ -200,13 +217,6 @@ module.exports = {
             //         children: [
             //             // ['analysis/', '关于此部分'],
             //             'analysis/array'
-            //         ]
-            //     },
-            //     {
-            //         title: 'Vue周边栈',
-            //         collapsable: true,
-            //         children: [
-            //             // ['', 'Vue相关'],
             //         ]
             //     },
             //     {
