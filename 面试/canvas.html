@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="1000" height="1000">
+        你的浏览器太旧了,请更新浏览器!
+    </canvas>
+    <script>
+        /*
+        const canvas = document.querySelector('#canvas');
+        //拿到护臂==画笔,获取一个和当前画布相关的2d上下文
+        const cxt = canvas.getContext('2d');
+        */
+
+        /*
+        //绘制图形  只能绘制矩形和路径的基本图形
+        //坐标原点(0,0) canvas 左上角
+        cxt.strokeRect(10, 20, 100, 100);//绘制一个矩形
+        cxt.fillRect(10, 20, 100, 100);//填充一个矩形
+        cxt.clearRect(0, 0, 600, 600);//清除指定的矩形区域
+        */
+
+        /*
+        let left = 0;
+        setInterval(function () {
+            cxt.clearRect(0, 0, 600, 600);	//清空矩形区域,只有清空矩形区域这一个清除!
+            cxt.strokeRect(0, left, 600, 600);
+            left += 4;
+        })
+        */
+
+        /*
+        // 三角形
+        function drw() {
+            const canvas = document.querySelector('#canvas');
+            const cxt = canvas.getContext('2d');
+            
+            //1.开启路径
+            cxt.beginPath();
+            //2.把画笔移动到路径的起点
+            cxt.moveTo(200,200);
+            // 3.绘制一条线段
+            cxt.lineTo(400,200);
+            cxt.lineTo(400,400);
+            cxt.lineTo(200,200);
+            // 4.在路径上描边 对上一个路径描边
+            // cxt.stroke()//描边
+            cxt.fill()//填充,自动先闭合
+
+            //5.闭合路径
+            cxt.closePath()
+        }
+        */
+        /*
+        // 圆弧
+        function drw() {
+            const canvas = document.getElementById('canvas');
+            if (!canvas || !canvas.getContext) return
+            const cxt = canvas.getContext('2d');
+            // arc(x, y, r, startAngle(开始角度), endAngle(结束角度), anticlockwise) anticlockwise-默认false逆时针
+            cxt.arc(300, 300, 300, 0, Math.PI / 2,false);
+            
+            // cxt.stroke();
+            cxt.lineTo(300, 300)
+            cxt.lineTo(600, 300)
+            cxt.fill()
+            cxt.closePath();
+
+        }
+        */
+
+        /*
+        function drw() {
+            const canvas = document.getElementsByTagName('canvas')[0];
+            if (!canvas || !canvas.getContext) return
+            const cxt = canvas.getContext('2d');
+            const p = Math.PI;
+            cxt.beginPath();
+            // 大圆
+            cxt.arc(500, 500, 500, 0, 2 * p);
+            cxt.stroke();
+            // 右白
+            cxt.beginPath();
+            cxt.arc(500, 500, 500, -p / 2, p / 2);
+            cxt.fillStyle = 'white';
+            cxt.fill();
+            // 左黑
+            cxt.beginPath();
+            cxt.arc(500, 500, 500, -p / 2, p / 2, true);
+            cxt.fillStyle = 'black';
+            cxt.fill();
+            // 右上半白
+            cxt.beginPath();
+            cxt.arc(500, 250, 250, 0, 2 * p, true);
+            cxt.fillStyle = 'white';
+            cxt.fill();
+            // 左下半黑
+            cxt.beginPath();
+            cxt.arc(500, 750, 250, 0, 2 * p);
+            cxt.fillStyle = 'black';
+            cxt.fill();
+            // 上黑
+            cxt.beginPath();
+            cxt.arc(500, 250, 150, 0, p * 2);
+            cxt.fillStyle = 'black';
+            cxt.fill();
+            // 下白
+            cxt.beginPath();
+            cxt.arc(500, 750, 150, 0, p * 2);
+            cxt.fillStyle = 'white';
+            cxt.fill();
+        }
+        */
+
+        function drw() {
+            const canvas = document.querySelector("#canvas");
+            let
+                initX = 0,
+                initY = 450,
+                x,
+                y,
+                duration = 2000;
+            if (!canvas || !canvas.getContext) return;
+            const cxt = canvas.getContext("2d");
+            const startTimer = new Date();
+            cxt.beginPath();
+            let id = setTimeout(function step() {
+                console.log('id',id)
+                let p = (new Date() - startTimer) / duration;
+                x = 200 * p + initX;
+                y = 200 * Math.sin(p * Math.PI * 2) + initY;
+                cxt.arc(x, y, 1, 0, Math.PI * 2);
+                if (x >= 1000) {
+                    cxt.stroke();
+                    cxt.closePath();
+                    clearInterval(id);
+                    return;
+                }
+                setTimeout(step, 2)
+            }, 2)
+        }
+
+        drw()
+
+    </script>
+</body>
+
+</html>
