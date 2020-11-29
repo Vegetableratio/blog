@@ -27,13 +27,17 @@ function foo(){
 
 1.函数声明成功,会自动完成下面的图示
 
-<img :src="$withBase('/assets/js/原型1.png')">
+<img :src="$withBase('/assets/js/prototype1.png')">
 
 2.虽然任何的函数都有原型对象, 但是在实际使用的过程中, 我们只关心构造函数的原型, 普通函数的原型我们不关心,因为他没有任何的用处.
 
-<img :src="$withBase('/assets/js/原型2.png')">
+<img :src="$withBase('/assets/js/prototype2.png')">
 
 ---
+
+## 原型和原型链
+
+<img :src="$withBase('/assets/js/prototype_proto.jpg')">
 
 ## 通过原型创建对象
 
