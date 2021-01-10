@@ -68,7 +68,7 @@ module.exports = {
       {
         text: "前端框架学习笔记",
         items: [
-          { text: "React", link: "/react/study1" },
+          { text: "React", link: "/react/" },
         ],
       },
       // {
@@ -204,20 +204,30 @@ module.exports = {
           children: [["other/", "其他"], "other/module", "other/promise"],
         },
       ],
-      "/mobile/": [
+      "/react/":[
         {
-          title: "移动端",
+          title: "React",
           collapsable: true,
-          children: [["", "相关概念"]],
+          children: [
+            ["", "React"],
+            "基本使用",
+          ],
         },
       ],
-      "/peripheral-stack/": [
-        {
-          title: "周边栈",
-          collapsable: true,
-          children: ["library", "vue"],
-        },
-      ],
+      // "/mobile/": [
+      //   {
+      //     title: "移动端",
+      //     collapsable: true,
+      //     children: [["", "相关概念"]],
+      //   },
+      // ],
+      // "/peripheral-stack/": [
+      //   {
+      //     title: "周边栈",
+      //     collapsable: true,
+      //     children: ["library", "vue"],
+      //   },
+      // ],
       // '/vue-learn/':[
       //     {
       //         title: 'Vue源码学习',
