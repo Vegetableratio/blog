@@ -2,7 +2,7 @@
 node_modules
 /dist
 package-lock.json
-react代码资料
+
 # local env files
 .env.local
 .env.*.local
