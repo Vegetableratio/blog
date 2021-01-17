@@ -1,6 +1,6 @@
 module.exports = {
   dest: "dist", // dest 指定 vuepress build 的输出目录 默认值: .vuepress/dist
-  title: "怪蜀黍的前端之路", //网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
+  title: "学习笔记", //网站的标题，它将会被用作所有页面标题的前缀，同时，默认主题下，它将显示在导航栏（navbar）上。
   description: "coding note", //网站的描述，它将会以 <meta> 标签渲染到当前页面的 HTML 中。
   base: "/", //部署站点的基础路径
   // head 额外的需要被注入到当前页面的 HTML<head> 中的标签
@@ -15,7 +15,7 @@ module.exports = {
     ],
     [
       "link",
-      { rel: "apple-touch-icon", href: `/icons/apple-touch-icon-152x152.png` },
+      { rel: "apple-touch-icon", href: `/icons/apple-icon-152x152.png` },
     ],
     [
       "link",
@@ -29,15 +29,15 @@ module.exports = {
       "meta",
       {
         name: "msapplication-TileImage",
-        content: "/icons/msapplication-icon-144x144.png",
+        content: "/icons/apple-icon-144x144.png",
       },
     ],
     ["meta", { name: "msapplication-TileColor", content: "#000000" }],
     ["meta", { name: "keywords", content: "JavaScript,HTML,CSS" }],
   ],
   // host 指定用于 dev server 的主机名 Default: '0.0.0.0'
-  // port 指定 dev server 的端口 默认值: 8080
-  serviceWorker: false, //如果设置成 true，VuePress 将会自动生成并且注册一个 service worker，它缓存了那些已访问过的页面的内容，用于离线访问（仅在生产环境生效）
+  port: "9999", // port 指定 dev server 的端口 默认值: 8080
+  serviceWorker: true, //如果设置成 true，VuePress 将会自动生成并且注册一个 service worker，它缓存了那些已访问过的页面的内容，用于离线访问（仅在生产环境生效）
   // 主题
   themeConfig: {
     repo: "Vegetableratio/blog",
@@ -67,9 +67,7 @@ module.exports = {
       },
       {
         text: "前端框架学习笔记",
-        items: [
-          { text: "React", link: "/react/" },
-        ],
+        items: [{ text: "React", link: "/react/" }],
       },
       // {
       //     text: 'web周边栈',
@@ -204,14 +202,11 @@ module.exports = {
           children: [["other/", "其他"], "other/module", "other/promise"],
         },
       ],
-      "/react/":[
+      "/react/": [
         {
           title: "React",
           collapsable: true,
-          children: [
-            ["", "React"],
-            "基本使用",
-          ],
+          children: [["", "React"], "basic_use"],
         },
       ],
       // "/mobile/": [
