@@ -31,7 +31,7 @@ const VDOM = React.createElement(
 
 ## `jsx`的基本语法规则
 
-```
+```md
 1.定义虚拟DOM时，不要写引号。
 2.标签中混入JS表达式时要用{}。
 3.样式的类名指定不要用class，要用className。
@@ -377,11 +377,213 @@ class Demo extends React.Component {
 ## 事件处理
 
 (1).通过onXxx属性指定事件处理函数(注意大小写)  
-  a.React使用的是自定义(合成)事件, 而不是使用的原生DOM事件 —————— 为了更好的兼容性  
-  b.React中的事件是通过事件委托方式处理的(委托给组件最外层的元素) ————————为了的高效  
-(2).通过event.target得到发生事件的DOM元素对象 ——————————不要过度使用ref  
+  a.React使用的是自定义(合成)事件, 而不是使用的原生DOM事件 ---- 为了更好的兼容性  
+  b.React中的事件是通过事件委托方式处理的(委托给组件最外层的元素) ---- 为了的高效  
+(2).通过event.target得到发生事件的DOM元素对象 ---- 不要过度使用ref  
 
 ## 受控组件与非受控组件
 
 一言以概:组件的状态由代码管理为受控组件,反之为非受控.  
 可以参考[官网案例](https://zh-hans.reactjs.org/docs/uncontrolled-components.html)
+
+## 高阶函数
+
+高阶函数：如果一个函数符合下面2个规范中的任何一个，那该函数就是高阶函数。  
+  1.若A函数，接收的参数是一个函数，那么A就可以称之为高阶函数。  
+  2.若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数。  
+  常见的高阶函数有：Promise、setTimeout、arr.map()等等。  
+
+函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。  
+
+React中可以使用此概念进行,事件处理的回调函数传参。  
+
+使用函数柯里化:  
+
+```js
+class Login extends React.Component{
+  //初始化状态
+  state = {
+    username:'', //用户名
+    password:'' //密码
+  }
+
+  //保存表单数据到状态中
+  saveFormData = (dataType)=>{
+    return (event)=>{
+      this.setState({[dataType]:event.target.value})
+    }
+  }
+
+  //表单提交的回调
+  handleSubmit = (event)=>{
+    event.preventDefault() //阻止表单提交
+    const {username,password} = this.state
+    alert(`你输入的用户名是：${username},你输入的密码是：${password}`)
+  }
+  render(){
+    return(
+      <form onSubmit={this.handleSubmit}>
+        用户名：<input onChange={this.saveFormData('username')} type="text" name="username"/>
+        密码：<input onChange={this.saveFormData('password')} type="password" name="password"/>
+        <button>登录</button>
+      </form>
+    )
+  }
+}
+```
+
+不使用函数柯里化的实现:  
+
+```js
+class Login extends React.Component{
+  //初始化状态
+  state = {
+    username:'', //用户名
+    password:'' //密码
+  }
+
+  //保存表单数据到状态中
+  saveFormData = (dataType,event)=>{
+    this.setState({[dataType]:event.target.value})
+  }
+
+  //表单提交的回调
+  handleSubmit = (event)=>{
+    event.preventDefault() //阻止表单提交
+    const {username,password} = this.state
+    alert(`你输入的用户名是：${username},你输入的密码是：${password}`)
+  }
+  render(){
+    return(
+      <form onSubmit={this.handleSubmit}>
+        用户名：<input onChange={event => this.saveFormData('username',event) } type="text" name="username"/>
+        密码：<input onChange={event => this.saveFormData('password',event) } type="password" name="password"/>
+        <button>登录</button>
+      </form>
+    )
+  }
+}
+```
+
+## 生命周期函数
+
+旧版生命周期函数:
+
+<img :src="$withBase('/assets/react/life_cycle_old.png')">
+
+```md
+1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
+  1.constructor()
+  2.componentWillMount()
+  3.render()
+  4.componentDidMount() =====> 常用
+    一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息
+
+2. 更新阶段: 由组件内部this.setSate()或父组件render触发
+  1.shouldComponentUpdate()
+  2.componentWillUpdate()
+  3.render() =====> 必须使用的一个
+  4.componentDidUpdate()
+
+3. 卸载组件: 由ReactDOM.unmountComponentAtNode()触发
+  1.componentWillUnmount()  =====> 常用
+    一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
+```
+
+新版生命周期函数:
+<img :src="$withBase('/assets/react/life_cycle_new.png')">
+
+```md
+1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
+  1.constructor()
+  2.getDerivedStateFromProps 
+  3.render()
+  4.componentDidMount() =====> 常用
+    一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息
+
+2. 更新阶段: 由组件内部this.setSate()或父组件重新render触发
+  1.getDerivedStateFromProps
+  2.shouldComponentUpdate()
+  3.render()
+  4.getSnapshotBeforeUpdate
+  5.componentDidUpdate()
+
+3. 卸载组件: 由ReactDOM.unmountComponentAtNode()触发
+  1.componentWillUnmount()  =====> 常用
+    一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
+```
+
+### `getSnapshotBeforeUpdate` 使用场景
+
+[官网案例](https://zh-hans.reactjs.org/docs/react-component.html#getsnapshotbeforeupdate)  
+
+此用法并不常见，但它可能出现在 UI 处理中，如需要以特殊方式处理滚动位置的聊天线程等。
+
+```js
+class NewsList extends React.Component{
+
+  state = {newsArr:[]}
+
+  componentDidMount(){
+    setInterval(() => {
+      //获取原状态
+      const {newsArr} = this.state
+      //模拟一条新闻
+      const news = '新闻'+ (newsArr.length+1)
+      //更新状态
+      this.setState({newsArr:[news,...newsArr]})
+    }, 1000);
+  }
+
+  getSnapshotBeforeUpdate(){
+    return this.refs.list.scrollHeight
+  }
+
+  componentDidUpdate(preProps,preState,height){
+    this.refs.list.scrollTop += this.refs.list.scrollHeight - height
+  }
+
+  render(){
+    return(
+      <div className="list" ref="list">
+        {
+          this.state.newsArr.map((n,index)=>{
+            return <div key={index} className="news">{n}</div>
+          })
+        }
+      </div>
+    )
+  }
+}
+ReactDOM.render(<NewsList/>,document.getElementById('test'))
+```
+
+## `key` 的作用
+
+```md
+经典面试题:
+  1). react/vue中的key有什么作用？（key的内部原理是什么？）
+  2). 为什么遍历列表时，key最好不要用index?
+  
+  1. 虚拟DOM中key的作用：
+      1). 简单的说: key是虚拟DOM对象的标识, 在更新显示时key起着极其重要的作用。
+      2). 详细的说: 当状态中的数据发生变化时，react会根据【新数据】生成【新的虚拟DOM】, 
+                    随后React进行【新虚拟DOM】与【旧虚拟DOM】的diff比较，比较规则如下：
+              a. 旧虚拟DOM中找到了与新虚拟DOM相同的key：
+                    (1).若虚拟DOM中内容没变, 直接使用之前的真实DOM
+                    (2).若虚拟DOM中内容变了, 则生成新的真实DOM，随后替换掉页面中之前的真实DOM
+              b. 旧虚拟DOM中未找到与新虚拟DOM相同的key
+                    根据数据创建新的真实DOM，随后渲染到到页面
+              
+  2. 用index作为key可能会引发的问题：
+        1. 若对数据进行：逆序添加、逆序删除等破坏顺序操作:
+                会产生没有必要的真实DOM更新 ==> 界面效果没问题, 但效率低。
+        2. 如果结构中还包含输入类的DOM：
+                会产生错误DOM更新 ==> 界面有问题。
+        3. 注意！如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，
+          仅用于渲染列表用于展示，使用index作为key是没有问题的。
+      
+  3. 开发中如何选择key?:
+        1.最好使用每条数据的唯一标识作为key, 比如id、手机号、身份证号、学号等唯一值。
+        2.如果确定只是简单的展示数据，用index也是可以的。
+```

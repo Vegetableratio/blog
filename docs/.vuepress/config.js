@@ -206,7 +206,13 @@ module.exports = {
         {
           title: "React",
           collapsable: true,
-          children: [["", "React"], "basic_use"],
+          children: [
+            ["", "React"], 
+            "basic_use",
+            "react_cli",
+            "redux",
+            "other_options"
+          ],
         },
       ],
       // "/mobile/": [
