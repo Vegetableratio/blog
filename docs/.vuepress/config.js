@@ -209,7 +209,8 @@ module.exports = {
           children: [
             ["", "React"], 
             "basic_use",
-            "react_cli",
+            "router",
+            "ui_library",
             "redux",
             "other_options"
           ],
