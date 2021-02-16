@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .move {
+      height: 50vh;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="move"></div>
+  <script>
+    let startY = 0,
+      moveY = 0,
+      moveDistence = 0;
+    let coverTransform = 'translateY(0)'
+    const move = document.querySelector('.move');
+    move.style.transform = coverTransform;
+    move.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+      move.style.transition = '';
+    })
+    move.addEventListener('touchmove', (e) => {
+      moveY = e.touches[0].clientY;
+      moveDistence = moveY - startY;
+      move.style.transform = `translateY(${moveDistence}px)`
+    })
+    move.addEventListener('touchend', (e) => {
+      move.style.transform = `translateY(0)`
+      move.style.transition = 'transform 1s linear';
+    })
+  </script>
+</body>
+
+</html>
